@@ -6302,6 +6302,11 @@ Route::monitoring_state () const
 			return MonitoringDisk | get_input_monitoring_state (false, false);
 		} else {
 			/* recording */
+			const samplecnt_t prtl = _session.preroll_record_trim_len ();
+			if (session_rec && roll && prtl > 0 && _disk_writer->get_captured_samples () < prtl) {
+				/* CUE monitor during pre-roll */
+				return MonitoringDisk | get_input_monitoring_state (true, false);
+			}
 			return get_input_monitoring_state (true, false);
 		}
 
@@ -6324,4 +6329,3 @@ Route::monitoring_state () const
 	abort(); /* NOTREACHED */
 	return MonitoringSilence;
 }
-
