@@ -486,6 +486,7 @@ public:
 	void set_default_play_speed (double spd, TransportRequestSource origin = TRS_UI);
 	void reset_transport_speed (TransportRequestSource origin = TRS_UI);
 
+	void start_transport_from_processor ();
 	void request_transport_speed (double speed, TransportRequestSource origin = TRS_UI);
 	void request_transport_speed_nonzero (double, TransportRequestSource origin = TRS_UI);
 	void request_overwrite_buffer (boost::shared_ptr<Track>, OverwriteReason);
