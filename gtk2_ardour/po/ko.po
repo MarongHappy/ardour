@@ -1,4 +1,4 @@
-# Korean translations for gtk2-ardour7
+# Korean translations for gtk2_ardour7
 # Copyright (C) 2003 Paul Davis
 # This file is distributed under the same license as the gtk2-ardour7 package.
 #
